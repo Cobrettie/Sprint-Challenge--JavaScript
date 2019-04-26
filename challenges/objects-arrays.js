@@ -129,6 +129,13 @@ const graduates = [{
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 const universities = [];
+
+for (i = 0; i < graduates.length; i++) {
+  graduates[i].university
+  universities.push(graduates[i].university)
+  universities.sort();
+}
+
 console.log(universities)
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
@@ -138,11 +145,24 @@ Name email@example.com
 
 Log the result of your new array. */
 const contactInfo = [];
+
+for (i = 0; i < graduates.length; i++) {
+  contactInfo.push(`${graduates[i].first_name} ${graduates[i].email}`);
+}
+
 console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
+
+for (i = 0; i < graduates.length; i++) {
+  graduates[i].university
+  if (graduates[i].university.includes('Uni')) {
+    uni.push(graduates[i].university)
+  }
+}
+
 console.log(uni);
 
 
@@ -219,6 +239,15 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 const animalNames = [];
+
+for (i = 0; i < zooAnimals.length; i++) {
+  let mappedNames = {};
+  mappedNames.name = zooAnimals[i].animal_name;
+  mappedNames.sciName = zooAnimals[i].scientific_name;
+  animalNames.push(mappedNames);
+  // mappedNames = {};
+}
+
 console.log(animalNames);
 
 /* Request 2: .map()    
@@ -227,7 +256,12 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 
-const lowerCase = [];
+// const lowerCase = [];
+
+const lowerCase = zooAnimals.map((animal) => {
+  return animal.animal_name.toLowerCase();
+});
+
 console.log(lowerCase);
 
 /* Request 3: .filter() 
@@ -235,7 +269,12 @@ console.log(lowerCase);
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-const largerPopulation = [];
+// const largerPopulation = [];
+
+const largerPopulation = zooAnimals.filter((animal) => {
+  return animal.population < 5;
+});
+
 console.log(largerPopulation);
 
 /* Request 4: .reduce() 
@@ -243,7 +282,12 @@ console.log(largerPopulation);
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = 0;
+// const populationTotal = 0;
+
+const populationTotal = zooAnimals.reduce(function (totalAnimals, item) {
+  return totalAnimals + item.population;
+}, 0);
+
 console.log(populationTotal);
 
 
