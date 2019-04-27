@@ -16,6 +16,8 @@
 //     return 2 * (this.length * this.width + this.length * this.height + this.width * this.height)
 // }
 
+
+
 // ES6 Classes
 
 class CuboidMaker {
@@ -47,16 +49,29 @@ console.log(cuboid.surfaceArea()); // 130
 
 
 
+// Stretch Task: Extend the base class CuboidMaker with a sub class called CubeMaker.  Find out the formulas for volume and surface area for cubes and create those methods using the dimension properties from CuboidMaker.  Test your work by logging out your volume and surface area.
+
+
+
 // STRETCH TASK
+
+
+// Volume for cube = length of any one side ** 3
+// Surface area for cube = 6a squared, where a is the length of any one side of the cube 
 
 class CubeMaker extends CuboidMaker {
     constructor(properties) {
         super(properties);
     }
+
+    volume() {
+        return (this.length ** 3);
+    }
+
+    surfaceArea() {
+        return (6 * this.length ** 2);
+    }
 }
 
-
-
-
-
-// Stretch Task: Extend the base class CuboidMaker with a sub class called CubeMaker.  Find out the formulas for volume and surface area for cubes and create those methods using the dimension properties from CuboidMaker.  Test your work by logging out your volume and surface area.
+console.log(cuboid.volume());
+console.log(cuboid.surfaceArea());
