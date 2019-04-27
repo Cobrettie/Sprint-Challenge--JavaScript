@@ -242,8 +242,8 @@ const animalNames = [];
 
 for (i = 0; i < zooAnimals.length; i++) {
   let mappedNames = {};
-  mappedNames.name = zooAnimals[i].animal_name;
-  mappedNames.sciName = zooAnimals[i].scientific_name;
+  mappedNames.Name = zooAnimals[i].animal_name;
+  mappedNames.Scientific = zooAnimals[i].scientific_name;
   animalNames.push(mappedNames);
   // mappedNames = {};
 }
